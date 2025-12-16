@@ -60,6 +60,9 @@ resource "azurerm_linux_function_app" "main" {
     }
 
     cors {
+      # NOTE: Using wildcard (*) for development. 
+      # In production, replace with specific Static Web App URL: 
+      # allowed_origins = [azurerm_static_web_app.main.default_host_name]
       allowed_origins = ["*"]
     }
   }
