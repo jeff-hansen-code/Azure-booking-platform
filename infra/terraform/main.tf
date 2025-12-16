@@ -16,7 +16,7 @@ resource "azurerm_storage_account" "main" {
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  
+
   tags = {
     Environment = var.environment
     Project     = var.project_name
@@ -80,7 +80,7 @@ resource "azurerm_linux_function_app" "main" {
 resource "azurerm_static_web_app" "main" {
   name                = "${var.project_name}-${var.environment}-web"
   resource_group_name = azurerm_resource_group.main.name
-  location            = "eastus2"  # Static Web Apps have limited region availability
+  location            = "eastus2" # Static Web Apps have limited region availability
   sku_tier            = "Free"
   sku_size            = "Free"
 

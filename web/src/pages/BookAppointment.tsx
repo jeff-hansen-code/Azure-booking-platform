@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { appointmentService } from '../services/appointmentService';
 import type { CreateAppointmentRequest } from '../types/appointment';
 import './BookAppointment.css';

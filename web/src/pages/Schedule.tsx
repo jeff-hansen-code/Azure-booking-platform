@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { appointmentService } from '../services/appointmentService';
 import type { Appointment } from '../types/appointment';
 import './Schedule.css';
@@ -17,11 +17,7 @@ export function Schedule() {
     };
   });
 
-  useEffect(() => {
-    loadAppointments();
-  }, [dateRange]);
-
-  const loadAppointments = async () => {
+  const loadAppointments = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -32,7 +28,11 @@ export function Schedule() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [dateRange.from, dateRange.to]);
+
+  useEffect(() => {
+    loadAppointments();
+  }, [loadAppointments]);
 
   const formatDateTime = (utcString: string) => {
     const date = new Date(utcString);
