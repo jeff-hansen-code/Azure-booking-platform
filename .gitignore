@@ -4,6 +4,17 @@
 # Azure Functions localsettings file
 local.settings.json
 
+# Azurite storage emulator
+__blobstorage__/
+__queuestorage__/
+__azurite_db*__.json
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
 # User-specific files
 *.suo
 *.user
