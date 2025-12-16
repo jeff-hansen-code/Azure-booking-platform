@@ -1,0 +1,8 @@
+# Example terraform variables file
+# Copy to terraform.tfvars and update with your values
+
+subscription_id       = "your-azure-subscription-id"
+resource_group_name   = "rg-booking-platform"
+location              = "eastus"
+environment           = "dev"
+project_name          = "booking"
