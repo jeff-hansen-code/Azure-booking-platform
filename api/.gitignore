@@ -1,0 +1,12 @@
+bin/
+obj/
+.azurefunctions/
+local.settings.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+__blobstorage__/
+__queuestorage__/
+__azurite_db*__.json
+.vscode/
